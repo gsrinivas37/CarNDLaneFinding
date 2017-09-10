@@ -17,6 +17,27 @@ The goals / steps of this project are the following:
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
 
+[can_image1]: ./output_images_can/solidWhiteCurve.jpg "solidWhiteCurve"
+[can_image2]: ./output_images_can/solidWhiteRight.jpg "solidWhiteRight"
+[can_image3]: ./output_images_can/solidYellowCurve.jpg "solidYellowCurve"
+[can_image4]: ./output_images_can/solidYellowCurve2.jpg "solidYellowCurve2"
+[can_image5]: ./output_images_can/solidYellowLeft.jpg "solidYellowLeft"
+[can_image6]: ./output_images_can/whiteCarLaneSwitch.jpg "whiteCarLaneSwitch"
+
+[reg_image1]: ./output_images_reg/solidWhiteCurve.jpg "solidWhiteCurve"
+[reg_image2]: ./output_images_reg/solidWhiteRight.jpg "solidWhiteRight"
+[reg_image3]: ./output_images_reg/solidYellowCurve.jpg "solidYellowCurve"
+[reg_image4]: ./output_images_reg/solidYellowCurve2.jpg "solidYellowCurve2"
+[reg_image5]: ./output_images_reg/solidYellowLeft.jpg "solidYellowLeft"
+[reg_image6]: ./output_images_reg/whiteCarLaneSwitch.jpg "whiteCarLaneSwitch"
+
+[fin_image1]: ./output_images_fin/solidWhiteCurve.jpg "solidWhiteCurve"
+[fin_image2]: ./output_images_fin/solidWhiteRight.jpg "solidWhiteRight"
+[fin_image3]: ./output_images_fin/solidYellowCurve.jpg "solidYellowCurve"
+[fin_image4]: ./output_images_fin/solidYellowCurve2.jpg "solidYellowCurve2"
+[fin_image5]: ./output_images_fin/solidYellowLeft.jpg "solidYellowLeft"
+[fin_image6]: ./output_images_fin/whiteCarLaneSwitch.jpg "whiteCarLaneSwitch"
+
 ---
 
 ### Reflection
@@ -34,9 +55,28 @@ My pipeline consisted of below steps.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+The images after canny edge detection are as below.
+![alt text][can_image1]
+![alt text][can_image2]
+![alt text][can_image3]
+![alt text][can_image4]
+![alt text][can_image5]
 
-![alt text][image1]
+The images after applying region of interest filter are as below.
+![alt text][reg_image1]
+![alt text][reg_image2]
+![alt text][reg_image3]
+![alt text][reg_image4]
+![alt text][reg_image5]
+
+
+The images after superimposing the hough transformed lines on original image are as below.
+![alt text][fin_image1]
+![alt text][fin_image2]
+![alt text][fin_image3]
+![alt text][fin_image4]
+![alt text][fin_image5]
+
 
 
 ### 2. Identify potential shortcomings with your current pipeline
