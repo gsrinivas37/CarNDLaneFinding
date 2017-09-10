@@ -81,14 +81,17 @@ The images after superimposing the hough transformed lines on original image are
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+I see following shortcomings in this basic implementation.
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+1. It is not working for the third video. When I debugged I found that it doesn't seem to handle the shadows, different lighting conditions and also other edges on the side of the road.
+2. It probably won't handle curved roads well.
+3. It might have issues when there is downhill/uphill roads.
+4. If there are vehicles infront the car or in the adjacent lane.
 
 ### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to ...
+1. I think it might be worth to fitler the image with yellow and white color to detect the lines.
+2. Handle curved roads
+3. Detect other vehicles on the road and ignore their edges. Color filter might solve to some extent but there could be white and yellow colored vehicles as well.
 
-Another potential improvement could be to ...
