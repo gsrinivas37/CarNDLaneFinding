@@ -23,7 +23,14 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of below steps. 
+
+  1. Convert the images to grayscale.
+  2. Apply Gaussian filter to blur the image. I used the kernel size of 5
+  3. Apply Canny edge detection filter to the blurred image. I used the 40 and 120 as the parameter with some trial and error.
+  4. Applied filter to select edges only in the interested region.
+  5. Applied hough transform to connect the edges pixels to get lines. I played with lot of different parameter options and each of them gave different results. I finally settled on the 3, 15, 5 values.
+  6. Finally I super imposed the lines on the original image using the provided utility method weighted_img.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
