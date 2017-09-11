@@ -32,6 +32,13 @@ The goals / steps of this project are the following:
 [fin_image5]: ./output_images_fin/solidYellowLeft.jpg "solidYellowLeft"
 [fin_image6]: ./output_images_fin/whiteCarLaneSwitch.jpg "whiteCarLaneSwitch"
 
+[sol_image1]: ./output_images/solidWhiteCurve.jpg "solidWhiteCurve"
+[sol_image2]: ./output_images/solidWhiteRight.jpg "solidWhiteRight"
+[sol_image3]: ./output_images/solidYellowCurve.jpg "solidYellowCurve"
+[sol_image4]: ./output_images/solidYellowCurve2.jpg "solidYellowCurve2"
+[sol_image5]: ./output_images/solidYellowLeft.jpg "solidYellowLeft"
+[sol_image6]: ./output_images/whiteCarLaneSwitch.jpg "whiteCarLaneSwitch"
+
 ---
 
 ### Reflection
@@ -47,7 +54,11 @@ My pipeline consisted of below steps.
   5. Applied hough transform to connect the edges pixels to get lines. I played with lot of different parameter options and each of them gave different results. I finally settled on the 3, 15, 5 values.
   6. Finally I super imposed the lines on the original image using the provided utility method weighted_img.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In order to draw a single line on the left and right lanes, I did following changes to the draw_lines() function.
+  1. For each line, I computed the slope, length and intercept.
+  2. I separated the lines into two groups pos_slope and neg_slope based on the slope value which correspond to left and right lane.
+  3. I computed the weighted average of both pos_slope and neg_slope lines using length as the weights.
+  4. Finally I calculated end points of solid line by using the 320 and 530 as y-coordinates which correspond to end points of the lines.
 
 The images after canny edge detection are as below.
 ![alt text][can_image1]
@@ -71,7 +82,12 @@ The images after superimposing the hough transformed lines on original image are
 ![alt text][fin_image4]
 ![alt text][fin_image5]
 
-
+The images after superimposing the solid lines on original image are as below.
+![alt text][sol_image1]
+![alt text][sol_image2]
+![alt text][sol_image3]
+![alt text][sol_image4]
+![alt text][sol_image5]
 
 ### 2. Identify potential shortcomings with your current pipeline
 
